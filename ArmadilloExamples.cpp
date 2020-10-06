@@ -108,7 +108,7 @@ Rcpp::List sparsePCA(arma::mat& X, arma::mat& Vstart, double lambda, double eps 
     fnew = accu(square(X - U * V.t()))/2 + lambda * accu(abs(V));
     
     // Calculate error
-    error = std::abs(fold - fnew);
+    error = std::fabs(fold - fnew);
     
     fold = fnew;
   }
